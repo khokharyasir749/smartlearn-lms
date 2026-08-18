@@ -27,6 +27,8 @@ Coming soon.
 
 ![SmartLearn Login](./public/screenshots/login.png)
 
+=======
+
 ## ✨ Features
 
 - 🏠 Modern landing page
