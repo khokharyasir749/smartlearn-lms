@@ -10,23 +10,22 @@ Coming soon.
 
 ## 📸 Preview
 
-Add screenshots of your project here.
 
 ### 🏠 Home Page
 
-![SmartLearn Home](./screenshots/home.png)
+![SmartLearn Home Page](./public/screenshots/home.png)
 
 ### 📚 Courses Page
 
-![Courses Page](./screenshots/courses.png)
+![SmartLearn Courses](./public/screenshots/courses.png)
 
 ### 📊 Student Dashboard
 
-![Dashboard](./screenshots/dashboard.png)
+![SmartLearn Dashboard](./public/screenshots/dashboard.png)
 
 ### 🔐 Login Page
 
-![Login](./screenshots/login.png)
+![SmartLearn Login](./public/screenshots/login.png)
 
 ## ✨ Features
 
