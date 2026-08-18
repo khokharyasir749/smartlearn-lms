@@ -1,33 +1,53 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
-    <nav className="navbar">
+    <header className="navbar">
       <div
-        className="logo"
+        className="navbar-logo"
         onClick={() => navigate("/")}
-        style={{ cursor: "pointer" }}
       >
-        📚 SmartLearn
+        <span className="logo-icon">📚</span>
+        <span>SmartLearn</span>
       </div>
 
-      <div className="nav-links">
-        <NavLink to="/">Home</NavLink>
+      <nav className="navbar-links">
+        <button
+          className={isActive("/") ? "active" : ""}
+          onClick={() => navigate("/")}
+        >
+          Home
+        </button>
 
-        <NavLink to="/courses">Courses</NavLink>
+        <button
+          className={isActive("/courses") ? "active" : ""}
+          onClick={() => navigate("/courses")}
+        >
+          Courses
+        </button>
 
-        <NavLink to="/dashboard">Dashboard</NavLink>
-      </div>
+        <button
+          className={isActive("/dashboard") ? "active" : ""}
+          onClick={() => navigate("/dashboard")}
+        >
+          Dashboard
+        </button>
+      </nav>
 
       <button
-        className="login-btn"
+        className="navbar-login"
         onClick={() => navigate("/login")}
       >
         Login
       </button>
-    </nav>
+    </header>
   );
 }
 

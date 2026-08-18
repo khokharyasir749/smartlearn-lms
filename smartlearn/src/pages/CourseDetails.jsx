@@ -1,124 +1,108 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const courses = {
   1: {
     title: "Complete Web Development",
     category: "Web Development",
-    level: "Beginner",
     icon: "💻",
+    description:
+      "Learn HTML, CSS, JavaScript, React, and modern web development through practical projects.",
     rating: "4.9",
     students: "2,450",
     lessons: 42,
+    level: "Beginner",
     price: "$49",
-    duration: "18 hours",
-    description:
-      "Learn the fundamentals of modern web development. Build websites using HTML, CSS, JavaScript and responsive design.",
-    instructor: "Yasir Ahmed",
   },
 
   2: {
     title: "Python Programming",
     category: "Programming",
-    level: "Beginner",
     icon: "🐍",
+    description:
+      "Learn Python programming fundamentals and build practical projects.",
     rating: "4.8",
     students: "1,850",
     lessons: 36,
+    level: "Beginner",
     price: "$39",
-    duration: "15 hours",
-    description:
-      "Learn Python from the basics and build practical programming projects.",
-    instructor: "Ali Hassan",
   },
 
   3: {
     title: "React.js Masterclass",
     category: "Web Development",
-    level: "Intermediate",
     icon: "⚛️",
+    description:
+      "Build modern React applications and learn component-based development.",
     rating: "4.9",
     students: "1,420",
     lessons: 48,
+    level: "Intermediate",
     price: "$59",
-    duration: "22 hours",
-    description:
-      "Build modern interactive applications using React components, state, props and routing.",
-    instructor: "Ahmed Khan",
   },
 
   4: {
     title: "UI/UX Design Fundamentals",
     category: "Design",
-    level: "Beginner",
     icon: "🎨",
+    description:
+      "Learn user interface and user experience design fundamentals.",
     rating: "4.7",
     students: "1,320",
     lessons: 28,
+    level: "Beginner",
     price: "$35",
-    duration: "12 hours",
-    description:
-      "Learn the fundamentals of user interface and user experience design.",
-    instructor: "Sara Ahmed",
   },
 
   5: {
     title: "JavaScript Essentials",
     category: "Programming",
-    level: "Intermediate",
     icon: "🟨",
+    description:
+      "Master JavaScript fundamentals and build interactive web applications.",
     rating: "4.8",
     students: "1,760",
     lessons: 40,
+    level: "Intermediate",
     price: "$45",
-    duration: "17 hours",
-    description:
-      "Learn JavaScript fundamentals and build interactive web experiences.",
-    instructor: "Hamza Ali",
   },
 
   6: {
     title: "Graphic Design",
     category: "Design",
-    level: "Beginner",
     icon: "🖌️",
+    description:
+      "Learn graphic design principles and create professional visual projects.",
     rating: "4.6",
     students: "980",
     lessons: 25,
+    level: "Beginner",
     price: "$29",
-    duration: "10 hours",
-    description:
-      "Learn design principles, typography, layouts and visual communication.",
-    instructor: "Ayesha Khan",
   },
 
   7: {
     title: "Data Science with Python",
     category: "Data Science",
-    level: "Advanced",
     icon: "📊",
+    description:
+      "Learn data analysis, visualization, and Python-based data science.",
     rating: "4.9",
     students: "870",
     lessons: 55,
+    level: "Advanced",
     price: "$69",
-    duration: "25 hours",
-    description:
-      "Explore data analysis, Python libraries and practical data science concepts.",
-    instructor: "Usman Malik",
   },
 
   8: {
     title: "Git & GitHub",
     category: "Programming",
-    level: "Beginner",
     icon: "🔧",
+    description:
+      "Learn Git and GitHub for version control and professional development.",
     rating: "4.8",
     students: "1,150",
     lessons: 20,
+    level: "Beginner",
     price: "$25",
-    duration: "7 hours",
-    description:
-      "Learn Git and GitHub workflows for managing and collaborating on projects.",
-    instructor: "Zain Ahmed",
   },
 };
 
@@ -130,134 +114,89 @@ function CourseDetails() {
 
   if (!course) {
     return (
-      <div className="page-container">
-        <h1>Course Not Found 😕</h1>
+      <main className="course-details-page">
+        <div className="course-details-container">
+          <h1>Course Not Found</h1>
 
-        <button
-          className="primary-btn"
-          onClick={() => navigate("/courses")}
-        >
-          Back to Courses
-        </button>
-      </div>
+          <button
+            className="back-courses-btn"
+            onClick={() => navigate("/courses")}
+          >
+            ← Back to Courses
+          </button>
+        </div>
+      </main>
     );
   }
 
   return (
     <main className="course-details-page">
+      <div className="course-details-container">
 
-      <section className="course-details-hero">
+        <button
+          className="back-courses-btn"
+          onClick={() => navigate("/courses")}
+        >
+          ← Back to Courses
+        </button>
 
-        <div className="details-icon">
-          {course.icon}
-        </div>
+        <section className="course-details-hero">
 
-        <div className="details-content">
+          <div className="course-details-content">
 
-          <span className="course-category">
-            {course.category}
-          </span>
+            <div className="course-details-icon">
+              {course.icon}
+            </div>
 
-          <h1>{course.title}</h1>
-
-          <p>
-            {course.description}
-          </p>
-
-          <div className="details-rating">
-            ⭐ {course.rating}
-            <span>
-              ({course.students} students)
+            <span className="course-details-category">
+              {course.category}
             </span>
-          </div>
 
-          <div className="details-info">
-            <span>🎯 {course.level}</span>
-            <span>📖 {course.lessons} Lessons</span>
-            <span>⏱️ {course.duration}</span>
-          </div>
+            <h1>{course.title}</h1>
 
-        </div>
+            <p className="course-details-description">
+              {course.description}
+            </p>
 
-      </section>
-
-      <section className="course-details-grid">
-
-        <div className="curriculum">
-
-          <h2>Course Curriculum 📚</h2>
-
-          <div className="lesson">
-            <span>01</span>
-            <div>
-              <h3>Introduction</h3>
-              <p>Getting started with the course.</p>
+            <div className="course-details-meta">
+              <span>⭐ {course.rating}</span>
+              <span>👨‍🎓 {course.students} students</span>
+              <span>📖 {course.lessons} lessons</span>
+              <span>🎯 {course.level}</span>
             </div>
-            <span>▶️</span>
-          </div>
 
-          <div className="lesson">
-            <span>02</span>
-            <div>
-              <h3>Fundamentals</h3>
-              <p>Learn the core concepts.</p>
+            <div className="course-price">
+              Course Price
+              <strong>{course.price}</strong>
             </div>
-            <span>▶️</span>
+
+            <button
+              className="enroll-btn"
+              onClick={() => navigate("/login")}
+            >
+              Enroll Now →
+            </button>
+
           </div>
 
-          <div className="lesson">
-            <span>03</span>
-            <div>
-              <h3>Practical Project</h3>
-              <p>Build your first project.</p>
-            </div>
-            <span>▶️</span>
+          <div className="course-details-card">
+
+            <h2>Course Includes</h2>
+
+            <ul>
+              <li>✅ Practical lessons</li>
+              <li>✅ Beginner friendly content</li>
+              <li>✅ Real-world projects</li>
+              <li>✅ Progress tracking</li>
+              <li>✅ Course certificate</li>
+              <li>✅ Lifetime access</li>
+            </ul>
+
           </div>
 
-          <div className="lesson">
-            <span>04</span>
-            <div>
-              <h3>Final Project</h3>
-              <p>Apply everything you learned.</p>
-            </div>
-            <span>▶️</span>
-          </div>
+        </section>
 
-        </div>
-
-        <aside className="enroll-card">
-
-          <div className="enroll-icon">
-            {course.icon}
-          </div>
-
-          <h2>{course.price}</h2>
-
-          <p>Lifetime access to this course.</p>
-
-          <button
-            className="enroll-btn"
-            onClick={() => navigate("/login")}
-          >
-            Start Learning
-          </button>
-
-          <div className="enroll-details">
-            <span>✓ Full course access</span>
-            <span>✓ Certificate</span>
-            <span>✓ Practical projects</span>
-            <span>✓ Progress tracking</span>
-          </div>
-
-          <div className="instructor">
-            <strong>Instructor</strong>
-            <span>{course.instructor}</span>
-          </div>
-
-        </aside>
-
-      </section>
-
+      </div>
     </main>
   );
 }
