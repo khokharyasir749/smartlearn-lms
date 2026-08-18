@@ -10,24 +10,21 @@ Coming soon.
 
 ## 📸 Preview
 
-
 ### 🏠 Home Page
 
-![SmartLearn Home Page](./public/screenshots/home.png)
+![SmartLearn Home Page](./smartlearn/public/screenshots/home.png)
 
 ### 📚 Courses Page
 
-![SmartLearn Courses](./public/screenshots/courses.png)
+![SmartLearn Courses Page](./smartlearn/public/screenshots/courses.png)
 
 ### 📊 Student Dashboard
 
-![SmartLearn Dashboard](./public/screenshots/dashboard.png)
+![SmartLearn Dashboard](./smartlearn/public/screenshots/dashboard.png)
 
 ### 🔐 Login Page
 
-![SmartLearn Login](./public/screenshots/login.png)
-
-=======
+![SmartLearn Login](./smartlearn/public/screenshots/login.png)
 
 ## ✨ Features
 
